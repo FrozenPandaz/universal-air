@@ -5,6 +5,7 @@
 /dist-server
 /tmp
 /out-tsc
+/exec
 
 # dependencies
 /node_modules
@@ -41,3 +42,5 @@ testem.log
 # System Files
 .DS_Store
 Thumbs.db
+
+dist-server

@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { RouterModule } from '@angular/router';
 
 
 import { AppComponent } from './app.component';
@@ -10,7 +11,15 @@ import { AppComponent } from './app.component';
     AppComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule.withServerTransition({ appId: 'universalAirApp' }),
+    RouterModule.forRoot([
+      {
+        path: 'lazy',
+        loadChildren: './lazy/lazy.module#LazyModule'
+      }
+    ], {
+      initialNavigation: 'enabled'
+    })
   ],
   providers: [],
   bootstrap: [AppComponent]
